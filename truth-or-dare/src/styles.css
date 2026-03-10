@@ -1,0 +1,96 @@
+body {
+  font-family: Arial;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 20px;
+  background: #222;
+  border-radius: 12px;
+}
+/* CONTENEDOR */
+.card-container{
+  perspective:1000px;
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+}
+
+/* CARTA */
+.card-pro{
+  width:320px;
+  height:420px;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform .6s;
+  cursor:pointer;
+}
+
+.card-pro.flipped{
+  transform:rotateY(180deg);
+}
+
+/* LADOS */
+.card-front,
+.card-back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/* FRONT */
+.card-front{
+  background:linear-gradient(135deg,#ff006e,#8338ec);
+}
+
+/* BACK */
+.card-back{
+  background:#1e1e1e;
+  transform:rotateY(180deg);
+  box-shadow:0 0 30px rgba(255,0,120,.4);
+}
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:30px;
+}
+
+.truth{
+  background:#3a86ff;
+  color:white;
+  font-size:18px;
+}
+
+.dare{
+  background:#ff006e;
+  color:white;
+  font-size:18px;
+}
+.player-turn{
+  margin-top:20px;
+  animation:fade .5s ease;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:translateY(-10px);}
+  to{opacity:1;}
+}
